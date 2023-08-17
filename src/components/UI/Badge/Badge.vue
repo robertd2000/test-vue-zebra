@@ -8,12 +8,23 @@
 
 <style scoped>
 .badge {
-  padding: 1rem 2rem;
+  padding: 0.25rem 1rem;
   align-items: center;
   cursor: pointer;
   transition: border-color 0.25s;
-  border-radius: 8px;
-  border: 1px solid #0f62fe;
-  color: #0f62fe;
+  border-radius: var(--radius-full, 22.5rem);
+  background: var(--bg-bg-5, #f0f6fe);
+  color: var(--link-link-dark-default, #00133a);
+  font-family: Nunito Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 1.225rem */
+
+  transition: all linear 0.2s;
+}
+
+.badge:hover {
+  background: var(--bg-bg-5, #e6edf7);
 }
 </style>

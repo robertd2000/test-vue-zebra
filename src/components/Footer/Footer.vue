@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="footer-inner">
+    <div class="footer-inner container">
       <div class="footer-title">
         <img src="../../assets/logo.svg" class="logo" alt="Logo" />
         <p>© alpha, 2023</p>
@@ -14,7 +14,6 @@
 <style scoped>
 .footer {
   background-color: #f0f6fe;
-  margin-top: 6rem;
 }
 
 .footer-inner {
@@ -23,15 +22,15 @@
   justify-content: start;
   align-items: center;
   vertical-align: middle;
-  max-width: 1700px;
-  margin: auto;
 }
 
 .footer-title {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1;
   color: #81899d;
 }
 .logo {
-  height: 32px;
+  height: 36px;
 }
 </style>

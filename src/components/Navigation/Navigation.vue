@@ -1,6 +1,10 @@
 <template>
   <div class="navigation">
-    <img src="../../assets/logo.svg" class="logo" alt="Logo" />
+    <div class="container">
+      <div class="navigation-wrapper">
+        <img src="../../assets/logo.svg" class="logo" alt="Logo" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -8,15 +12,16 @@
 
 <style scoped>
 .navigation {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.navigation-wrapper {
   height: 123px;
   display: flex;
   justify-content: start;
   align-items: center;
   vertical-align: middle;
-  max-width: 1700px;
-  margin: auto;
 }
-
 .logo {
   height: 48px;
 }

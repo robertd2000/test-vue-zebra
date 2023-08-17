@@ -1,6 +1,12 @@
-export const getNews = async (page) => {
-  const data = await fetch(`https://flems.github.io/test/api/news/${page}/`)
-  const res = await data.json()
+import { baseUrl } from '../constants/url'
 
-  return res
+export const getNews = async (page) => {
+  try {
+    const data = await fetch(`${baseUrl}/news/${page}/`)
+    const res = await data.json()
+
+    return res
+  } catch (error) {
+    throw error
+  }
 }

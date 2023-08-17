@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="title">
+    <div class="title container">
       <h2>Новости</h2>
     </div>
   </div>
@@ -14,14 +14,14 @@
   height: 320px;
   background-image: url('../../assets/bg.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  /* box-shadow: 4px 0px 4px 0px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0px -4px 2px rgba(0, 0, 0, 0.15);
 }
 
 .title {
   display: grid;
   align-items: start;
-  max-width: 1700px;
-  margin: auto;
 }
 
 .title h2 {

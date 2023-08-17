@@ -1,5 +1,11 @@
 import { ref } from 'vue'
 
+/**
+ * Composable - отвечает за пагинацию
+ *
+ * Возвращает текущую страницу, флаг наличия следующей страницы
+ * и функции мутации текущей страницы и флага наличия следующей страницы
+ */
 export const usePagination = () => {
   const page = ref(1)
   const hasNextPage = ref(false)

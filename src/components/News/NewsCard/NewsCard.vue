@@ -1,46 +1,61 @@
 <template>
-  <Card>
-    <!-- <div
-      class="card-image"
-      :style="{
-        borderImage: `url(${item.image})`,
-      }"
-    ></div> -->
-    <img
-      :src="
-        item?.image || `https://flems.github.io/test/images/placeholder.jpg`
-      "
-      class="card-image"
-      alt="Avatar"
-      style="width: 100%"
-    />
-    {{ item.name }}
+  <Card :image="item?.image">
+    <template v-slot:content>
+      <NewsCardDate :date="item.date" />
+      <div class="car-title">
+        <a :href="item.link">
+          {{ item.name }}
+        </a>
+      </div>
+      <div class="card-description">
+        {{ item.previewText }}
+      </div>
+    </template>
+
+    <template v-slot:footer>
+      <Badge :id="item?.type?.xmlId || ''">{{ item?.type?.value || '' }}</Badge>
+    </template>
   </Card>
 </template>
 
 <script setup>
 import Card from '../../UI/Card/Card.vue'
+import Badge from '../../UI/Badge/Badge.vue'
+import NewsCardDate from '../NewsCardDate/NewsCardDate.vue'
 
-defineProps({
+const props = defineProps({
   item: {
     name: String,
+    link: String,
     previewText: String,
     image: String,
+    date: Number,
+    type: [Object],
   },
 })
 </script>
 
 <style scoped>
-.card-image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: auto;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  filter: contrast(70%);
-  overflow: hidden;
-  position: relative;
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+.car-title {
+  margin-top: 1rem;
+  color: var(--link-link-color-default, #0c5bef);
+  font-family: 'Nunito Sans';
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.65rem */
+  cursor: pointer;
+}
+
+.card-description {
+  color: var(--grey-color-black-85, #222327);
+  margin-top: 1rem;
+
+  font-family: Nunito Sans;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 1.625rem */
+  letter-spacing: -0.0125rem;
 }
 </style>
