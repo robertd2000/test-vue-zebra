@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# Тестовое задание на позицию fronted-разработчика
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Ссылка для [ТЕСТА](https://robertd2000.github.io/test-vue-zebra/).
 
-## Recommended IDE Setup
+## Основная задача
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Необходимо реализовать список новостей по макету.
+
+Макет - https://www.figma.com/file/uOILcSVyOalI3qHhTIyRbU/Tasks?type=design&node-id=6709-165&mode=design
+
+## Технический стек:
+- vue 3 (composition + setup api, composables);
+- moment js для работы с датой;
+- не стал использовать TypeScript, так как в условиях тестового задания было требование не использовать библиотек, кроме vue и moment js (в рабочих и собственных проектах всегда использую TypeScript);
+- так как проект небольшой, использовал классическую структуру и архитектуру приложения, не стал применять продвинутые архитектуры как FSD;
