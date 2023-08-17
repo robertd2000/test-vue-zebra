@@ -8,7 +8,7 @@
         </a>
       </div>
       <div class="card-description">
-        {{ item.previewText }}
+        {{ previewText }}
       </div>
     </template>
 
@@ -22,6 +22,8 @@
 import Card from '../../UI/Card/Card.vue'
 import Badge from '../../UI/Badge/Badge.vue'
 import NewsCardDate from '../NewsCardDate/NewsCardDate.vue'
+import { removeSpecialCharacters } from '../../../lib/text'
+import { computed } from 'vue'
 
 const props = defineProps({
   item: {
@@ -32,6 +34,10 @@ const props = defineProps({
     date: Number,
     type: [Object],
   },
+})
+
+const previewText = computed(() => {
+  return removeSpecialCharacters(props.item.previewText)
 })
 </script>
 
